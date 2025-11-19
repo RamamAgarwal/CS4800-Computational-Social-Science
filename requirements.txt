@@ -1,0 +1,14 @@
+praw
+psaw
+python-dotenv
+pandas
+tqdm
+spacy
+gensim
+pyLDAvis
+wordcloud
+matplotlib
+seaborn
+nltk
+vaderSentiment
+scikit-learn
