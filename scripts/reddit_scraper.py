@@ -2,8 +2,20 @@ import praw
 import csv
 import time
 import sys
+from dotenv import load_dotenv
+import os
 
-# --- 1. AUTHENTICATION ---
+
+def init_reddit():
+    load_dotenv()
+    reddit = praw.Reddit(
+        client_id=os.getenv("REDDIT_CLIENT_ID"),
+        client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
+        user_agent=os.getenv("REDDIT_USER_AGENT"),
+    )
+    return reddit
+
+# # --- 1. AUTHENTICATION ---
 # User's provided credentials - THIS SECTION IS CORRECT
 reddit = praw.Reddit(
     client_id="CkqK0rL321nSmK1yVMkobg",
@@ -13,12 +25,14 @@ reddit = praw.Reddit(
     user_agent="MenstrualScraper/0.1 by dunno_who_but"
 )
 
+# reddit = init_reddit()
+
 # --- 2. CONFIGURATION ---
 
 # New expanded list of subreddits
-subreddit_list_products = ["Menopause", "perimenopause", "earlymenopause", "menopausesupport", "hormones"]
+subreddit_list = ["Menopause", "perimenopause", "earlymenopause", "menopausesupport", "hormones", "HormoneTherapy"]
 # Remove duplicates (like 'ftm' and 'FtM') by making all lowercase
-subreddit_list_products = list(set([sub.lower() for sub in subreddit_list_products]))
+subreddit_list = list(set([sub.lower() for sub in subreddit_list]))
 
 
 
@@ -34,11 +48,12 @@ queries = [
 sort_methods = ["relevance", "top", "new"]
 
 # --- Keyword Set 1: Products & Stigma ---
-keywords_products = ["menopause", "perimenopause", "hot flashes", "night sweats", "HRT", "hormone therapy", "estrogen", "progesterone", 
+keywords = ["menopause", "perimenopause", "hot flashes", "night sweats", "HRT", "hormone therapy", "estrogen", "progesterone", 
                      "mood swings", "anxiety", "depression", "brain fog", "sleep issues", "exercise", "diet", "self-care"]
 
 # How many posts to scrape *per query*.
 # 1000 is the max limit from Reddit's API.
+POST_LIMIT_PER_QUERY = 10
 POST_LIMIT_PER_QUERY = 1000
 
 # --- NEW FUNCTION TO BUILD BETTER QUERIES ---
@@ -57,8 +72,8 @@ def create_query(keywords):
     return ' OR '.join(query_parts)
 
 # --- Build the new, more effective queries ---
-product_query = create_query(keywords_products)
-output_filename_products = "reddit_products_data.csv"
+query = create_query(keywords)
+output_filename = "data/raw/raw_reddit_data.csv"
 processed_post_ids_products = set()
 
 
@@ -158,28 +173,28 @@ print(f"Sort Methods: {', '.join(sort_methods)}")
 print(f"Post Limit per Query: {POST_LIMIT_PER_QUERY}")
 
 # --- SCRAPE 1: PRODUCTS ---
-print(f"\n\n{'='*20} STARTING SCRAPE 1: PRODUCTS {'='*20}")
-print(f"Product Subreddits: {', '.join(subreddit_list_products)}")
-print(f"Keywords: {product_query[:150]}...")
-print(f"Output file: {output_filename_products}")
+print(f"\n\n{'='*20} STARTING SCRAPE {'='*20}")
+print(f"Subreddits: {', '.join(subreddit_list)}")
+print(f"Keywords: {query[:150]}...")
+print(f"Output file: {output_filename}")
 
 total_comments_saved_products = 0
 total_unique_posts_saved_products = 0
 
-with open(output_filename_products, 'w', newline='', encoding='utf-8') as f_products:
-    writer_products = csv.writer(f_products)
-    writer_products.writerow([
+with open(output_filename, 'w', newline='', encoding='utf-8') as f_obj:
+    f_writer = csv.writer(f_obj)
+    f_writer.writerow([
         "subreddit", "post_id", "post_created_utc", "post_title", "post_body",
         "post_score", "post_url", "comment_id", "comment_body", "comment_score",
         "comment_created_utc"
     ])
 
-    for subreddit_name in subreddit_list_products:
+    for subreddit_name in subreddit_list:
         for sort_method in sort_methods:
-            print(f"\n--- Querying r/{subreddit_name} (Sort: {sort_method}) for PRODUCTS ---")
+            print(f"\n--- Querying r/{subreddit_name} (Sort: {sort_method}) ---")
             try:
                 submissions = reddit.subreddit(subreddit_name).search(
-                    product_query,
+                    query,
                     sort=sort_method,
                     time_filter="all",
                     limit=POST_LIMIT_PER_QUERY
@@ -187,7 +202,7 @@ with open(output_filename_products, 'w', newline='', encoding='utf-8') as f_prod
 
                 new_posts, new_comments = process_submissions(
                     submissions,
-                    writer_products,
+                    f_writer,
                     processed_post_ids_products
                 )
 
@@ -200,10 +215,10 @@ with open(output_filename_products, 'w', newline='', encoding='utf-8') as f_prod
                 time.sleep(5) # Pause for 5 seconds before next query
                 continue
 
-print(f"\n--- PRODUCT SCRAPE COMPLETE ---")
-print(f"Total Unique Posts (Products): {total_unique_posts_saved_products}")
-print(f"Total Comments (Products): {total_comments_saved_products}")
+print(f"\n--- SCRAPE COMPLETE ---")
+print(f"Total Unique Posts: {total_unique_posts_saved_products}")
+print(f"Total Comments: {total_comments_saved_products}")
+print(f"Product data saved to: {output_filename}")
 
 
-print(f"\n\n{'='*20} OVERALL SCRAPE COMPLETE {'='*20}")
-print(f"Product data saved to: {output_filename_products}")
+# print(f"\n\n{'='*20} OVERALL SCRAPE COMPLETE {'='*20}")
