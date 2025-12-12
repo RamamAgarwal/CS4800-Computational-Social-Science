@@ -1,0 +1,19 @@
+EDA summary
+Years: 2020,2021,2022,2023,2024,2025
+Slopes (per year):
+ - positive_bert: 0.004764
+ - positive_vader: -0.020871
+ - negative_bert: 0.028344
+ - negative_vader: 0.023529
+
+Suggested research questions:
+1. How do trends in positive/negative sentiment change over years, and are there significant shifts around specific events?
+2. How do BERT and VADER disagree systematically (e.g., on sarcasm, specialty vocabulary)?
+3. Are certain topics (from LDA) associated with consistently higher negative sentiment?
+4. Do subtopics show different sentiment dynamics compared to main topics?
+5. Is there a relationship between comment volume and sentiment (e.g., spikes of negativity with higher activity)?
+6. Can we detect temporal clusters of sentiment changes that align with real-world events or policy changes?
+7. How well do automatic sentiment labels align with manual annotation on a small sample?
+8. Are there user- or community-level differences in sentiment (e.g., by subreddit or poster)?
+9. Does sentiment predict subsequent engagement (replies, upvotes) controlling for topic?
+10. Is topic prevalence shifting over time and does that explain sentiment shifts?
