@@ -1,8 +1,7 @@
 
 # Menopause Reddit Analysis
 
-This project analyzes Reddit discussions about **menopause and perimenopause** 
-to identify major topics and sentiment patterns using NLP techniques.
+This project analyzes Reddit discussions about **menopause and perimenopause** to identify major topics and sentiment patterns using NLP techniques.
 
 ## Structure
 - `data/` — raw and processed datasets  
@@ -11,23 +10,22 @@ to identify major topics and sentiment patterns using NLP techniques.
 - `outputs/` — generated models, visualizations, and reports  
 
 ## Ethical note
-All data is anonymized before analysis. No Reddit usernames or personal identifiers are stored.
-=======
-# CS4800-Computational-Social-Science
 
-# 🩺 Understanding Menopause on Reddit Using NLP  
+All data is anonymized before analysis. No Reddit usernames or personal identifiers are stored.
+
+# Understanding Menopause on Reddit Using NLP  
 ### *A Computational Analysis of Themes & Sentiments in Menopause-Related Discussions*
 
 ---
 
-## 📌 Overview  
+## Overview  
 This project applies **Natural Language Processing (NLP)** methods to understand how people discuss **menopause and perimenopause** on Reddit. Using a pipeline involving **data scraping, preprocessing, topic modeling (LDA), and sentiment analysis (VADER)**, the study uncovers dominant themes, emotional patterns, and unmet support needs expressed by users across menopause-related communities.
 
 This repository contains the code, report, figures, and documentation associated with the project.
 
 ---
 
-## 🚀 Key Objectives  
+## Key Objectives  
 - Collect and preprocess Reddit posts from menopause-related subreddits  
 - Identify high-level themes using **Latent Dirichlet Allocation (LDA)**  
 - Analyze emotional tone using **VADER sentiment analysis**  
@@ -36,7 +34,7 @@ This repository contains the code, report, figures, and documentation associated
 
 ---
 
-## 🛠️ Tech Stack  
+## Tech Stack  
 - **Python 3.10+**  
 - Libraries:
   - `praw` or `psaw` (Reddit scraping)
@@ -49,7 +47,7 @@ This repository contains the code, report, figures, and documentation associated
 
 ---
 
-## 📂 Repository Structure  
+## Repository Structure  
 ```
 Menopause-Reddit-Analysis/
 │
@@ -89,7 +87,7 @@ Menopause-Reddit-Analysis/
 ```
 ---
 
-## 🧼 Data Preprocessing Pipeline  
+## Data Preprocessing Pipeline  
 Key steps:
 
 1. **PII Removal**  
@@ -101,7 +99,7 @@ Key steps:
 
 ---
 
-## 🔍 Topic Modeling (LDA)  
+## Topic Modeling (LDA)  
 - Explored **K = 5–10 topics**  
 - Selected **K = 7** using coherence score maximization  
 - Final topics:
@@ -118,7 +116,7 @@ Key steps:
 
 ---
 
-## 😊 Sentiment Analysis (VADER)  
+## Sentiment Analysis (VADER)  
 Posts classified into **positive, neutral, and negative** categories.
 
 ### Key insights:
@@ -129,7 +127,7 @@ Posts classified into **positive, neutral, and negative** categories.
 
 ---
 
-## 📊 Visualizations  
+## Visualizations  
 - Coherence Score Plot  
 - LDA Word Clouds  
 - pyLDAvis Intertopic Map  
@@ -140,7 +138,7 @@ All visual outputs are located in the `results/figures/` folder.
 
 ---
 
-## 🎯 Key Insights  
+## Key Insights  
 - Reddit is a significant platform for menopause discussions  
 - Users show **high emotional burden** (anxiety, pain, sleep issues)  
 - Discussions about **HRT and clinicians** tend to be hopeful  
@@ -149,7 +147,7 @@ All visual outputs are located in the `results/figures/` folder.
 
 ---
 
-## 📌 Future Improvements  
+## Future Improvements  
 - Use BERT/RoBERTa for advanced sentiment & emotion detection  
 - Multi-label emotion classification  
 - Temporal trend analysis  
@@ -158,7 +156,7 @@ All visual outputs are located in the `results/figures/` folder.
 
 ---
 
-## 📄 License  
+## License  
 This project is intended for academic and research use.  
 Please follow Reddit’s policies for handling scraped data.
 
