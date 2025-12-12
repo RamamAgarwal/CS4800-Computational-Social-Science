@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Menopause Reddit Analysis
 
 This project analyzes Reddit discussions about **menopause and perimenopause** 
