@@ -116,7 +116,7 @@ def sentiment_over_time(df: pd.DataFrame, outdir: str) -> Optional[pd.DataFrame]
         ax.legend()
         save_plot(fig, os.path.join(outdir, f"sentiment_over_time_{model_name.lower()}.png"))
 
-    return results.get("BERT") or results.get("VADER")
+    return results.get("BERT")
 
 
 def topic_prevalence_over_time(
@@ -285,7 +285,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--input",
-        "../"
         default="data/processed/processed_sentiment_analysis.csv",
         help="CSV with sentiment + topic columns (output of sentiment_analysis.py)",
     )
