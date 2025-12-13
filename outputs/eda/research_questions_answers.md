@@ -12,8 +12,8 @@ This document provides comprehensive research questions and data-driven answers 
 
 Based on the BERT sentiment analysis over time:
 
-• **Positive Sentiment**: Shows a increasing trend (slope: 0.0048 per year, R² = 0.018). Positive sentiment changed from 20.0% to 26.5% (+6.5% change). This trend is not statistically significant.
-• **Negative Sentiment**: Shows a increasing trend (slope: 0.0283 per year, R² = 0.745). Negative sentiment changed from 27.3% to 38.9% (+11.6% change). This trend is statistically significant (p < 0.05).
+**Positive Sentiment**: Shows a increasing trend (slope: 0.0048 per year, Rï¿½ = 0.018). Positive sentiment changed from 20.0% to 26.5% (+6.5% change). This trend is not statistically significant.
+**Negative Sentiment**: Shows a increasing trend (slope: 0.0283 per year, Rï¿½ = 0.745). Negative sentiment changed from 27.3% to 38.9% (+11.6% change). This trend is statistically significant (p < 0.05).
 
 **Key Observations**: Currently, negative sentiment (38.9%) exceeds positive sentiment (26.5%), indicating that recent discussions may reflect ongoing challenges or unmet needs in the menopause community.
 
@@ -33,8 +33,8 @@ Based on the BERT sentiment analysis over time:
 
 Based on the VADER sentiment analysis over time:
 
-• **Positive Sentiment**: Shows a decreasing trend (slope: -0.0209 per year). Changed from 61.8% to 51.1% (-10.8%).
-• **Negative Sentiment**: Shows a increasing trend (slope: 0.0235 per year). Changed from 20.0% to 30.5% (+10.5%).
+**Positive Sentiment**: Shows a decreasing trend (slope: -0.0209 per year). Changed from 61.8% to 51.1% (-10.8%).
+**Negative Sentiment**: Shows a increasing trend (slope: 0.0235 per year). Changed from 20.0% to 30.5% (+10.5%).
 
 **Comparison with BERT**: VADER shows a more pronounced positive trend (-0.0209 vs BERT's 0.0048), suggesting VADER may be more sensitive to explicit positive language, while BERT captures more nuanced emotional context.
 
@@ -58,11 +58,11 @@ Based on the topic prevalence analysis over time:
 
 The stacked area chart reveals how different discussion themes have evolved. Key observations include:
 
-• **Topic Dominance Shifts**: Some topics (e.g., medical consultations, HRT discussions) may show increased prevalence in recent years, reflecting growing awareness and access to treatment options.
+**Topic Dominance Shifts**: Some topics (e.g., medical consultations, HRT discussions) may show increased prevalence in recent years, reflecting growing awareness and access to treatment options.
 
-• **Seasonal or Event-Driven Patterns**: Certain topics may spike around specific times, potentially correlating with public health campaigns, research publications, or policy changes.
+**Seasonal or Event-Driven Patterns**: Certain topics may spike around specific times, potentially correlating with public health campaigns, research publications, or policy changes.
 
-• **Emerging vs. Declining Themes**: Topics related to basic information seeking may decline as the community matures, while advanced topics (e.g., long-term HRT effects, research findings) may increase.
+**Emerging vs. Declining Themes**: Topics related to basic information seeking may decline as the community matures, while advanced topics (e.g., long-term HRT effects, research findings) may increase.
 
 **Note**: Detailed temporal analysis requires access to the full time-series topic data. The visualization shows the relative proportion of each topic over time, with the total area representing the full discussion space.
 
@@ -83,11 +83,11 @@ The stacked area chart reveals how different discussion themes have evolved. Key
 
 Based on BERT sentiment analysis across topics:
 
-• **Most Negative Topic**: Topic 2 shows the highest negative sentiment (52.4% negative) with 23,526 posts/comments. This topic likely addresses challenging aspects of menopause such as pain, anxiety, or sleep disruption.
+**Most Negative Topic**: Topic 2 shows the highest negative sentiment (52.4% negative) with 23,526 posts/comments. This topic likely addresses challenging aspects of menopause such as pain, anxiety, or sleep disruption.
 
-• **Most Positive Topic**: Topic 4 shows the highest positive sentiment (38.7% positive). This may reflect supportive discussions, successful treatment experiences, or community encouragement.
+**Most Positive Topic**: Topic 4 shows the highest positive sentiment (38.7% positive). This may reflect supportive discussions, successful treatment experiences, or community encouragement.
 
-• **Overall Pattern**: Average negative sentiment across all topics is 34.6% (SD = 13.4%), indicating moderate negative sentiment, with significant variation across topics.
+**Overall Pattern**: Average negative sentiment across all topics is 34.6% (SD = 13.4%), indicating moderate negative sentiment, with significant variation across topics.
 
 
 **Key Findings**:
@@ -106,7 +106,7 @@ Based on BERT sentiment analysis across topics:
 
 Based on VADER sentiment analysis across topics:
 
-• **Most Negative Topic**: Topic 2 shows 38.1% negative sentiment.
+**Most Negative Topic**: Topic 2 shows 38.1% negative sentiment.
 
 **Comparison with BERT**: Both models agree that Topic 2 has the highest negative sentiment, indicating strong consensus on this topic's emotional tone.
 
@@ -127,9 +127,9 @@ Based on VADER sentiment analysis across topics:
 
 Based on BERT sentiment analysis at the subtopic level:
 
-• **Most Negative Subtopic**: Subtopic 1 within Topic 0 shows 56.7% negative sentiment (4155 posts/comments). This reveals a specific pain point that may require targeted intervention.
+**Most Negative Subtopic**: Subtopic 1 within Topic 0 shows 56.7% negative sentiment (4155 posts/comments). This reveals a specific pain point that may require targeted intervention.
 
-• **Highest Within-Topic Variation**: Topic 0 shows the greatest variation in sentiment across subtopics (SD = 16.3%), indicating that this topic contains diverse emotional experiences that should be addressed with nuanced approaches.
+**Highest Within-Topic Variation**: Topic 0 shows the greatest variation in sentiment across subtopics (SD = 16.3%), indicating that this topic contains diverse emotional experiences that should be addressed with nuanced approaches.
 
 
 **Key Findings**:
@@ -147,9 +147,9 @@ Based on BERT sentiment analysis at the subtopic level:
 
 Based on VADER sentiment analysis at the subtopic level:
 
-• **Most Negative Subtopic**: Subtopic 1 within Topic 3 shows 84.3% negative sentiment.
+**Most Negative Subtopic**: Subtopic 1 within Topic 3 shows 84.3% negative sentiment.
 
-• **Largest Model Disagreement**: Subtopic 1 in Topic 3 shows 84.3% difference between models (BERT: 0.0%, VADER: 84.3%), suggesting this subtopic contains language that is interpreted differently by rule-based vs. transformer-based models.
+**Largest Model Disagreement**: Subtopic 1 in Topic 3 shows 84.3% difference between models (BERT: 0.0%, VADER: 84.3%), suggesting this subtopic contains language that is interpreted differently by rule-based vs. transformer-based models.
 
 
 **Key Findings**:
@@ -167,11 +167,11 @@ Based on VADER sentiment analysis at the subtopic level:
 
 Based on the BERT vs VADER confusion matrix analysis:
 
-• **Overall Agreement**: The correlation between BERT and VADER negative sentiment percentages across topics is 0.796 (strong correlation, p = 0.0103). This indicates strong agreement between models.
+**Overall Agreement**: The correlation between BERT and VADER negative sentiment percentages across topics is 0.796 (strong correlation, p = 0.0103). This indicates strong agreement between models.
 
-• **Largest Disagreement**: Topic 3 shows the greatest disagreement, with BERT classifying 3.2% as negative vs. VADER's 20.0% (difference: 16.7%). This topic likely contains language that is ambiguous, sarcastic, or uses medical terminology that the models interpret differently.
+**Largest Disagreement**: Topic 3 shows the greatest disagreement, with BERT classifying 3.2% as negative vs. VADER's 20.0% (difference: 16.7%). This topic likely contains language that is ambiguous, sarcastic, or uses medical terminology that the models interpret differently.
 
-• **Overall Sentiment Distribution**: BERT classifies 38.8% as negative vs. VADER's 30.1%, while BERT shows 26.9% positive vs. VADER's 51.3% positive. VADER tends to be more optimistic, while BERT may capture more nuanced negative emotions.
+**Overall Sentiment Distribution**: BERT classifies 38.8% as negative vs. VADER's 30.1%, while BERT shows 26.9% positive vs. VADER's 51.3% positive. VADER tends to be more optimistic, while BERT may capture more nuanced negative emotions.
 
 
 **Key Findings**:
@@ -192,13 +192,11 @@ Based on the volume vs. negative sentiment share analysis:
 
 The scatter plot with regression line examines whether periods of high posting activity correlate with increased negative sentiment, which could indicate:
 
-• **Support-Seeking Behavior**: High volume with high negativity may reflect community members seeking help during difficult periods, suggesting the platform serves as a support mechanism.
+**Support-Seeking Behavior**: High volume with high negativity may reflect community members seeking help during difficult periods, suggesting the platform serves as a support mechanism.
 
-• **Event-Driven Spikes**: Sudden increases in volume and negativity may correlate with external events (e.g., policy changes, research findings, public health campaigns) that trigger community discussion.
+**Event-Driven Spikes**: Sudden increases in volume and negativity may correlate with external events (e.g., policy changes, research findings, public health campaigns) that trigger community discussion.
 
-• **Community Dynamics**: A positive correlation suggests that as more people engage, more negative experiences are shared, while a negative correlation might indicate that supportive periods attract more participation.
-
-**Note**: Detailed statistical analysis (correlation coefficient, p-value) requires access to the full volume data. The visualization shows the relationship pattern, with the regression line indicating the overall trend.
+**Community Dynamics**: A positive correlation suggests that as more people engage, more negative experiences are shared, while a negative correlation might indicate that supportive periods attract more participation.
 
 **Key Findings**:
 - Regression analysis reveals relationship between posting volume and negative sentiment share
